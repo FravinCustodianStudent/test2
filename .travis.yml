@@ -3,3 +3,12 @@ jdk:
   - openjdk17
 before_install:
   - chmod +x mvnw
+deploy:
+  provider: heroku
+  api_key: $HEROKU_TOKEN
+  skip_cleanup: true
+  app: "demo-fravin"
+before_deploy:
+  - rvm requirements
+  - rvm install 2.6
+  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
