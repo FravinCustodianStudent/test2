@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - openjdk17
+  - openjdk8
 before_install:
   - chmod +x mvnw
   - set JAVA_HOME=.\path\to\jdk17
