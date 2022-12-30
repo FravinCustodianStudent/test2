@@ -3,6 +3,8 @@ jdk:
   - openjdk17
 before_install:
   - chmod +x mvnw
+  - set JAVA_HOME=.\path\to\jdk17
+
 deploy:
   provider: heroku
   api_key: $HEROKU_TOKEN
